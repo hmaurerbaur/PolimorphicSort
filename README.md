@@ -78,6 +78,7 @@ What´s the best practice to make this test work?
 ## Proposed solution ##
 
 Based on version 1.4.3.RELEASE of Spring Data JPA version I tweaked the original Querydsl class. Yes that´s indeed a hack;-)
+Works for me but is not future resistent.
 
 ```java
 /**
