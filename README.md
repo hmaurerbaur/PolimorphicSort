@@ -1,6 +1,8 @@
 # Best practice to sort inherited classes #
 
-Given:
+The following classes describe inheritance between `Contact` and `Person` or between `Contact` and `Organisation`. Goal is to write a PagingAndSortingRepository and use Spring Data sort feature with (eg. `findAll(Sort sort)`)
+
+## Contact ##
 ```java
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -68,4 +70,3 @@ class ContactSortSpec extends Specification {
     }
 }
 ```
-
