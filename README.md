@@ -2,7 +2,7 @@
 
 The following classes describe inheritance between `Contact` and `Person` or between `Contact` and `Organisation`. Goal is to write a PagingAndSortingRepository and use Spring Data sort feature with (eg. `findAll(Sort sort)`)
 
-## Contact ##
+## Entities ##
 ```java
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -40,6 +40,7 @@ public class Person extends Contact {
 }
 ``` 
 
+## Test ##
 ```groovy
 @ContextConfiguration(classes = [TestConfiguration])
 @TransactionConfiguration(defaultRollback = true)
@@ -70,3 +71,5 @@ class ContactSortSpec extends Specification {
     }
 }
 ```
+Currently this test fails because neither lastName nor organisationName are properties of contact.
+What´s the best practice to make this test work?
