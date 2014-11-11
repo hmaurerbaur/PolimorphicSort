@@ -72,15 +72,16 @@ class ContactSortSpec extends Specification {
 }
 ```
 Currently this test fails because neither lastName nor organisationName are properties of contact.
-What´s the best practice to make this test work?
+What´s the best practice to make this test work? 
 
 
 ## Proposed solution ##
 
+Based on version 1.4.3.RELEASE of Spring Data JPA version I tweaked the original Querydsl class. Yes that´s indeed a hack;-)
+
 ```java
 /**
- * Handles sorting in inherited classes original {@link org.springframework.data.jpa.repository.support.QueryDslRepositorySupport} implementation
- * only allows sorting of attributes in base class.
+ * Handles sorting in inherited classes. Original: {@link org.springframework.data.jpa.repository.support.QueryDslRepositorySupport} implementation
  */
 public class PolymorphicQueryDsl extends Querydsl {
     private final EntityManager entityManager;
